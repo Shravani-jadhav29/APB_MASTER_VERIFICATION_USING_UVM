@@ -2,7 +2,7 @@ APB_MASTER_VERIFICATION_USING_UVM
 
 APB (Advanced Peripheral Bus) is a low-power, low-bandwidth bus protocol defined in the ARM AMBA specification and is widely used for communication with peripheral devices in System-on-Chip (SoC) designs
 # APB Master Verification Using UVM
-# APB Master Verification Using UVM
+
 
 ## Introduction
 
@@ -41,8 +41,6 @@ Encapsulates the driver, sequencer, and monitor components.
 ### APB Scoreboard
 Compares expected and actual transaction data to detect mismatches.
 
-### Coverage Collector
-Collects functional coverage information for addresses, transaction types, wait states, and error conditions.
 
 ### Environment
 Connects all verification components and facilitates communication.
@@ -63,39 +61,7 @@ Controls verification scenarios and configures the environment.
 - PREADY
 - PSLVERR
 
-## Test Scenarios
 
-### Reset Test
-Verifies proper initialization of all APB signals after reset.
-
-### Write Test
-Checks write transactions for correct address and data transfer.
-
-### Read Test
-Validates read transactions and compares returned data with expected values.
-
-### Back-to-Back Transfer Test
-Verifies consecutive APB transactions without protocol violations.
-
-### Wait-State Test
-Checks APB operation when slave inserts wait states using PREADY.
-
-### Error Response Test
-Validates APB behavior when PSLVERR is asserted.
-
-### Random Transaction Test
-Exercises the design using constrained-random transactions.
-
-## Functional Coverage
-
-The coverage model tracks:
-
-- Address Coverage
-- Read Coverage
-- Write Coverage
-- Wait-State Coverage
-- Error Coverage
-- Address vs Transaction-Type Cross Coverage
 
 ## Features
 
@@ -113,10 +79,6 @@ The coverage model tracks:
 - SystemVerilog
 - Universal Verification Methodology (UVM)
 - EDA Playground
-- QuestaSim
-- Synopsys VCS
-- Cadence Xcelium
-- GitHub
 
 ## Conclusion
 
