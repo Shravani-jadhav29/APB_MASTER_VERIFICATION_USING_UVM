@@ -20,7 +20,42 @@ This project implements a UVM-based verification environment for an APB Master. 
 - Verify Error Conditions using PSLVERR.
 - Achieve Functional Coverage Goals.
 - Develop a Reusable and Scalable UVM Verification Environment.
+## Verification Architecture
 
+                    +----------------+
+                    |      TEST      |
+                    +--------+-------+
+                             |
+                    +--------v-------+
+                    |      ENV       |
+                    +--------+-------+
+                             |
+             +---------------+---------------+
+             |                               |
+     +-------v--------+              +-------v--------+
+     |   APB Agent    |              |   Scoreboard   |
+     +-------+--------+              +-------+--------+
+             |                               ^
+             |                               |
+     +-------v--------+              +-------+--------+
+     |    Monitor     |------------->| Analysis Port |
+     +----------------+              +----------------
+             ^
+             |
+     +-------+--------+
+     |    Driver      |
+     +-------+--------+
+             ^
+             |
+     +-------+--------+
+     |   Sequencer    |
+     +-------+--------+
+             |
+     +-------v--------+
+     |    Sequence    |
+     +----------------+
+
+                     DUT
 ## Verification Components
 
 ### APB Transaction
